@@ -11,6 +11,7 @@ from handler.recall_learning import RecallLearning
 from handler.rote_learning import RoteLearning
 from handler.spelling_learning import SpellingLearning
 from handler.test_learning import TestLearning
+from handler.match_learning import MatchLearning
 
 # 함수불러오기
 from utility import (
@@ -171,6 +172,10 @@ while 1:
             view_cnt=num_d,
             activity=3,
         )
+    elif ch_d == 8:
+        print("매칭게임을 시작합니다.")
+        controler = MatchLearning(driver=driver)
+        controler.run(num_d=num_d, word_d=word_d)
     print("학습이 종료되었습니다.")
     driver.get(set_site)  # 다시 세트페에지로 이동
     ch_d = chd_wh()  # 다시 선택

@@ -35,6 +35,7 @@ def word_get(driver: webdriver.Chrome, num_d: int) -> list:
         else:
             da_kyn[i] = f"{ko_d[0]}"  # 뜻만 저장
 
+    assert len(da_e) == len(da_k) == len(da_kyn)
     return [da_e, da_k, da_kyn]  # 영어단어, 한글단어, 뜻과 예문
 
 
@@ -48,14 +49,15 @@ def chd_wh() -> int:  # 학습유형 선택
         5: "암기학습(API 요청[경고])",
         6: "리콜학습(API 요청[경고])",
         7: "스펠학습(API 요청[경고])",
+        8: "매칭게임(매크로)"
     }
-    print(
-        "학습유형을 선택해주세요.\nCtrl + C 를 눌러 종료\n[1] 암기학습(매크로)\n[2] 리콜학습(매크로)\n[3] 스펠학습(매크로)\n[4] 테스트학습(매크로)\n[5] 암기학습(API 요청[경고])\n[6] 리콜학습(API 요청[경고])\n[7] 스펠학습(API 요청[경고])"
-    )
+    print("학습유형을 선택해주세요.\nCtrl + C 를 눌러 종료")
+    for i in range(1, 9):
+        print(f"[{i}] {choice_dict[i]}")
     while 1:
         try:
             ch_d = int(input(">>> "))
-            if ch_d >= 1 and ch_d <= 7:
+            if ch_d >= 1 and ch_d <= 8:
                 break
             else:
                 raise ValueError
