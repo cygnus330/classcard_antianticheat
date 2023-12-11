@@ -22,7 +22,8 @@ class RecallLearning:
             "#wrapper-learn > div.start-opt-body > div > div > div > div.m-t > a",
         ).click()  # 리콜학습 시작 버튼
         time.sleep(2)
-        for i in range(num_d):  # 단어 수 만큼 반복
+        for i in range(num_d): # 단어 수 만큼 반복
+            time.sleep(0.3)
             try:
                 cash_d = driver.find_element(
                     By.XPATH,

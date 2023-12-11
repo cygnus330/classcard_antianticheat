@@ -39,6 +39,7 @@ class TestLearning:
             By.XPATH, "/html/body/div[2]/div/div[2]/div[1]/div/span[2]/span"
         ).text
         for i in range(1, int(num_d) + 1):
+            time.sleep(0.4)
             cash_d = driver.find_element(  # 카드 앞면 단어 가져오기
                 By.XPATH,
                 f"//*[@id='testForm']/div[{i}]/div/div[1]/div[2]/div[2]/div/div",

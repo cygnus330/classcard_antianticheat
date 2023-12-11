@@ -25,6 +25,7 @@ class SpellingLearning:
         time.sleep(1)
         try:
             for i in range(1, num_d):
+                time.sleep(1)
                 cash_d = driver.find_element(
                     By.XPATH,
                     f"//*[@id='wrapper-learn']/div[1]/div/div[2]/div[2]/div[{i}]/div[1]/div/div/div/div[1]/span",
