@@ -16,6 +16,7 @@ class SpellingLearning:
         driver.find_element(
             By.XPATH,
             "/html/body/div[2]/div/div[2]/div[1]/div[3]",
+
         ).click()  # 스펠학습 진입 버튼
         time.sleep(1)
         driver.find_element(
